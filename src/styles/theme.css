@@ -1,7 +1,17 @@
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/SpaceGrotesk.ttf') format('ttf');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Specify colors. NOTE: YOU CAN CUSTOMIZE THESE HOWEVER YOU WANT! */
 :root {
   /* Font */
   --sl-font: 'Space Grotesk', sans-serif;
+  --sl-font-system-mono: "Space Mono", monospace;
 
   /* Dark mode colors */
 	--sl-color-accent-low: #3c0017;
@@ -27,8 +37,6 @@
   --sl-border: #262626;
   --pagefind-ui-border: #262626;
   --pagefind-ui-primary: var(--sl-color-accent);
-
-  --sl-font-system-mono: "Space Mono", monospace;
 }
 
 /* Change background color of sidebar & add border */
