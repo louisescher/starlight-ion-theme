@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
-    "@astrojs/node": "^8.2.5",
     "@astrojs/starlight": "^0.21.5",
     "@fontsource-variable/space-grotesk": "^5.0.17",
     "@fontsource/space-mono": "^5.0.19",
