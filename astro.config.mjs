@@ -22,7 +22,7 @@ export default defineConfig({
         directory: 'guides'
       }
     }, {
-      label: '[box] Reference',
+      label: '[book] Reference',
       autogenerate: {
         directory: 'reference'
       }
