@@ -12,9 +12,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# package manager lockfiles
-bun.lockb
-
 # environment variables
 .env
 .env.production

@@ -4,6 +4,8 @@ import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://louisescher.github.io',
+  base: 'startlight-ion-theme',
   integrations: [starlight({
     title: 'Ion Theme',
     social: {
