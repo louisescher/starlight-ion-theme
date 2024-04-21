@@ -1,0 +1,5 @@
+/* Adjust padding for stylistic purposes */
+.sl-markdown-content {
+  padding-bottom: 1rem !important;
+  margin-top: 0;
+}

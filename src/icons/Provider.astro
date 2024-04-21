@@ -1,0 +1,24 @@
+---
+const icons = await Astro.glob('./*.astro');
+
+type Props = {
+  icon: string;
+  class?: string;
+}
+
+const { icon } = Astro.props;
+
+if (icon === "Provider") {
+  throw new Error(`Invalid Icon "[${icon}]" passed to provider. This name is disabled by default.`);
+}
+
+let IconComponent = icons.find((iconFile) => {
+  return iconFile.file.split("/").pop()?.split(".astro")[0] === icon;
+});
+
+if (!IconComponent) {
+  throw new Error(`Invalid Icon "[${icon}]" passed to provider. Check your starlight config.`);
+}
+---
+
+<IconComponent.default />

@@ -1,0 +1,14 @@
+/* Remove content so padding doesn't remain without any content */
+.sl-markdown-content:not(:has(*)) {
+  display: none;
+}
+
+/* Ensure we don't have unnecessary margins on the footer when no content is shown */
+.sl-markdown-content:not(:has(*)) + footer {
+  margin-top: 0 !important;
+}
+
+/* Remove double border when no content is shown */
+.sl-markdown-content:not(:has(*)) + footer .page-footer {
+  border-top: none !important;
+}
