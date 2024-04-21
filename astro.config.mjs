@@ -7,6 +7,9 @@ export default defineConfig({
   base: '/starlight-ion-theme',
   integrations: [starlight({
     title: 'Ion Theme',
+    logo: {
+      src: './src/assets/ion-logo.svg'
+    },
     social: {
       github: 'https://github.com/comet-analytics/ion-theme'
     },
