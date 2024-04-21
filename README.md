@@ -12,6 +12,9 @@ npm create astro@latest -- --template louisescher/starlight-ion-theme
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
+![531shots_so](https://github.com/louisescher/starlight-ion-theme/assets/66965600/11dbcd5f-f811-467f-b51e-a2d652519954)
+
+
 ## 🚀 Project Structure
 
 Inside of your Astro + Starlight project, you'll see the following folders and files:
