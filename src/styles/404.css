@@ -12,3 +12,7 @@
 .sl-markdown-content:not(:has(*)) + footer .page-footer {
   border-top: none !important;
 }
+
+.meta {
+  display: none;
+}
