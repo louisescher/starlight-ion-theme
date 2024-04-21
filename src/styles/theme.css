@@ -154,10 +154,6 @@ a:hover, a[aria-current="true"] {
   color: var(--sl-color-white) !important;
 }
 
-a::after {
-  background-color: var(--sl-color-accent) !important;
-}
-
 /* Adjust font fot "On this page" header */
 #starlight__on-this-page {
   font-family: "Space Mono", monospace;
