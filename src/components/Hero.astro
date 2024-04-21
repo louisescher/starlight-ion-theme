@@ -116,11 +116,29 @@ const titleHTML = title.split(" ").map((titlePart: string) => {
 		margin-top: 1rem;
 	}
 
+	@media screen and (max-width: 1250px) {
+		.hero {
+			flex-direction: column-reverse;
+			text-align: center
+		}
+
+		h1 {
+			gap: 0.75rem;
+			text-align: center;
+			justify-content: center;
+		}
+
+		.hero > img,
+		.hero > .hero-html {
+			order: 2;
+			width: min(100%, 25rem);
+		}
+	}
+
 	@media (min-width: 50rem) {
 		.hero {
-			grid-template-columns: 7fr 4fr;
-			gap: 3%;
-			padding: 2rem;
+			gap: 2rem;
+			padding: 1rem;
 		}
 
 		.hero > img,

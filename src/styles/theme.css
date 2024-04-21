@@ -140,6 +140,11 @@ a:not(.sidebar a) {
   width: fit-content;
 }
 
+/* Make sure mobile links fill the entire space, not just fit the content */
+nav[aria-labelledby="starlight__on-this-page--mobile"] a {
+  width: 100% !important;
+}
+
 /* Adjust link color on footer */
 .page-footer a {
   color: var(--sl-color-gray-2);
@@ -299,4 +304,18 @@ dialog {
 /* Remove default padding on main since we have a footer */
 main:has(.page-footer) {
   padding-bottom: 0 !important;
+}
+
+@media screen and (max-width: 1250px) {
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    --stagger-height: 0rem !important;
+  }
+}
+
+@media (max-width: 72rem) {
+  .main-pane {
+    width: 100% !important;
+  }
 }
