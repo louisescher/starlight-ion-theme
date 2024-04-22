@@ -1,7 +1,7 @@
 /* Register your custom font family and tell the browser where to find it. */
 @font-face {
   font-family: 'Space Grotesk';
-  src: url('/SpaceGrotesk.ttf') format('ttf');
+  src: url('/starlight-ion-theme/SpaceGrotesk.ttf') format('ttf');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
