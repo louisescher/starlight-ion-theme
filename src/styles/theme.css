@@ -28,6 +28,8 @@
   --sl-border: #262626;
   --pagefind-ui-border: #262626;
   --pagefind-ui-primary: var(--sl-color-accent);
+
+  --sl-icon-size: 1.25rem;
 }
 
 /* Change background color of sidebar & add border */

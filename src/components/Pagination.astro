@@ -35,12 +35,12 @@ const isRtl = dir === 'rtl';
 </div>
 
 <div class="page-footer">
-	<div>
+	<div class="footer-links">
 		<span>©️ Louis Escher</span>
 		<span>—</span>
 		<a href="https://louisescher.dev/">Homepage</a>
 	</div>
-	<div class="social-footer-links">
+	<div class="social-footer-icons">
 		<a href="https://github.com/comet-analytics/ion-theme" aria-label="GitHub Icon"><Icon name="github" size='1.25rem' /></a>
 	</div>
 </div>
@@ -77,6 +77,18 @@ const isRtl = dir === 'rtl';
 	
 	a {
 		text-decoration: none;
+	}
+
+	.footer-links {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.social-footer-icons a {
+		display: inline-block !important;
+		height: var(--sl-icon-size);
 	}
 
 	[rel='next'] {
