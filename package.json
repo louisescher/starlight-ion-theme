@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
-    "@astrojs/starlight": "^0.21.5",
-    "@fontsource-variable/space-grotesk": "^5.0.17",
-    "@fontsource/space-mono": "^5.0.19",
-    "astro": "^4.3.5",
-    "sharp": "^0.32.5",
+    "@astrojs/starlight": "^0.22.0",
+    "@fontsource-variable/space-grotesk": "^5.0.18",
+    "@fontsource/space-mono": "^5.0.20",
+    "astro": "^4.7.0",
+    "sharp": "^0.33.3",
     "typescript": "^5.4.5"
   }
 }
