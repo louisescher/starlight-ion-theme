@@ -91,7 +91,7 @@ const fileTreeProcessor = rehype()
 				if (isDirectory) {
 					// Add a screen reader only label for directories before the icon so that it is announced
 					// as such before reading the directory name.
-					icon.children.unshift(h('span', { class: 'sr-only' }, directoryLabel));
+					icon.children.unshift(h('span', { class: 'sr-only' }, directoryLabel as any));
 				}
 
 				// Add classes and data attributes to the list item node.
