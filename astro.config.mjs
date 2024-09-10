@@ -11,7 +11,7 @@ export default defineConfig({
       src: './src/assets/ion-logo.svg'
     },
     social: {
-      github: 'https://github.com/comet-analytics/ion-theme'
+      github: 'https://github.com/louisescher/starlight-ion-theme'
     },
     sidebar: [{
       label: '[home] Home',
