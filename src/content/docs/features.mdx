@@ -213,7 +213,21 @@ title: "[rocket] Above and beyond"
 ```
 
 :::caution
-  The `"..."` quotes around the title are required. Starlight will throw an error otherwise.
+  The `"` quotes around the title are required. Starlight will throw an error otherwise.
+:::
+
+:::note
+  This will add the icon in the sidebar and on the site's title. To avoid putting it next to the title of the site itself, speficy the icon as such:
+  ```md title="example.md" "[rocket]"
+  ---
+  title: "Above and beyond"
+  description: "An example page."
+  sidebar:
+    label: "[rocket] Above and beyond"
+  # ...
+  ---
+  ```
+  This will only add the icon to the sidebar, not the title.
 :::
 
 import HeaderBadge from '@/components/HeaderBadge.astro';

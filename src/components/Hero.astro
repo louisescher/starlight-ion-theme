@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import CallToAction from './CallToAction.astro';
 import type { Props } from '@astrojs/starlight/props';
 
-const PAGE_TITLE_ID = '_top';
+import { PAGE_TITLE_ID } from '../constants';
 
 const { data } = Astro.props.entry;
 const { title = data.title, tagline, image, actions = [] } = data.hero || {};

@@ -16,7 +16,7 @@ const { sublist, nested, nestedCount } = Astro.props;
 	{
 		sublist.map((entry) => {
 			return (
-				<li class:list={[{ nested: nested && nestedCount > 1, active: entry.type === 'link' && entry.isCurrent }]}>
+				<li class:list={[{ nested: nested && nestedCount > 1, active: entry.type === 'link' && entry.isCurrent }, entry.label.includes("[") && "has-icon"]}>
 					{entry.type === 'link' ? (
 						<a
 							href={entry.href}

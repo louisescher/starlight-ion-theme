@@ -37,6 +37,8 @@ export default defineConfig({
       Sidebar: './src/components/Sidebar.astro',
       Pagination: './src/components/Pagination.astro',
       Hero: './src/components/Hero.astro',
+      Head: './src/components/Head.astro',
+      PageTitle: './src/components/PageTitle.astro'
     },
     customCss: [
       '@fontsource-variable/space-grotesk/index.css',
