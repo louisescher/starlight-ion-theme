@@ -62,6 +62,12 @@ const { sidebar } = Astro.props;
 	li.nested.active ~ li.nested {
 		display: block;
 	}
+
+	li.nested.active.has-icon ~ li.nested {
+		/* Icon width */
+		left: 14px;
+		position: relative;
+	}
 	
 	/* Make sure nesting works over multiple subpaths */
 	li.nested:first-of-type:has(~ li.nested li.nested.active) ~ li.nested {

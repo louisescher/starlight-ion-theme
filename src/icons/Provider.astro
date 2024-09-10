@@ -4,9 +4,10 @@ const icons = await Astro.glob('./*.astro');
 type Props = {
   icon: string;
   class?: string;
+  size?: 'sm' | 'lg';
 }
 
-const { icon } = Astro.props;
+const { icon, size } = Astro.props;
 
 if (icon === "Provider") {
   throw new Error(`Invalid Icon "[${icon}]" passed to provider. This name is disabled by default.`);
@@ -21,4 +22,6 @@ if (!IconComponent) {
 }
 ---
 
-<IconComponent.default />
+<div class:list={["icon-container", size]}>
+  <IconComponent.default />
+</div>

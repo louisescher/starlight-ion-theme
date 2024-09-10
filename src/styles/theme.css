@@ -225,6 +225,10 @@ starlight-file-tree.not-content {
   background: var(--sl-color-gray-5) !important;
 }
 
+.expressive-code .frame {
+  border-radius: 16px !important;
+}
+
 figcaption.header span {
   border: none !important;
   border-top-left-radius: 12px !important;
@@ -315,4 +319,19 @@ main:has(.page-footer) {
   .main-pane {
     width: 100% !important;
   }
+}
+
+.icon-container {
+  display: inline-flex;
+}
+
+.icon-container svg {
+  height: 1em;
+  width: 1em;
+}
+
+#_top {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
 }
