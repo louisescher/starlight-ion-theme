@@ -1,5 +1,7 @@
 ---
-const icons = await Astro.glob('./*.astro');
+import type { AstroInstance } from 'astro';
+
+const icons = import.meta.glob<AstroInstance>('./*.astro', { eager: true });
 
 type Props = {
   icon: string;
@@ -13,12 +15,17 @@ if (icon === "Provider") {
   throw new Error(`Invalid Icon "[${icon}]" passed to provider. This name is disabled by default.`);
 }
 
-let IconComponent = icons.find((iconFile) => {
-  return iconFile.file.split("/").pop()?.split(".astro")[0] === icon;
-});
+let IconComponent;
+
+for (const key of Object.keys(icons)) {
+  if (key.split("/").pop()?.split(".astro")[0] === icon) {
+    IconComponent = icons[key];
+    break;
+  }
+}
 
 if (!IconComponent) {
-  throw new Error(`Invalid Icon "[${icon}]" passed to provider. Check your starlight config.`);
+  throw new Error(`Invalid Icon "[${icon}]" passed to provider. Check your Starlight config.`);
 }
 ---
 
