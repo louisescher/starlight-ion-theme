@@ -1,5 +1,5 @@
 {
-  "name": "comet-docs",
+  "name": "starlight-ion-theme",
   "type": "module",
   "version": "1.1.0",
   "scripts": {
@@ -17,5 +17,6 @@
     "astro": "5.1.2",
     "sharp": "^0.33.5",
     "typescript": "^5.7.2"
-  }
+  },
+  "packageManager": "pnpm@9.15.2+sha256.022309bb31359142b65bfa889e0406d2eebd5acfffca47e6944acf29d9d6a66b"
 }
