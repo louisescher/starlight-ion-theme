@@ -12,7 +12,7 @@ npm create astro@latest -- --template louisescher/starlight-ion-theme
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-![158shots_so](https://github.com/louisescher/starlight-ion-theme/assets/66965600/64241499-8c8e-4672-bf4d-b2d8ff2a6862)
+![Frame 6](https://github.com/user-attachments/assets/d3cec93d-4d7d-4b0e-8c99-c15141b953c8)
 
 ## 🚀 Project Structure
 
