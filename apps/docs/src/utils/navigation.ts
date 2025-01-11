@@ -1,5 +1,5 @@
-import type { Badge } from "../schemas/badge";
-import type { LinkHTMLAttributes } from "../schemas/sidebar";
+import type { Badge } from "../../../../packages/starlight-ion-theme/schemas/badge";
+import type { LinkHTMLAttributes } from "../../../../packages/starlight-ion-theme/schemas/sidebar";
 
 export interface Link {
 	type: 'link';

@@ -1,12 +1,13 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import { ion, resolve } from 'starlight-ion-theme';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://louisescher.github.io',
   base: '/starlight-ion-theme',
   integrations: [starlight({
-    title: 'Ion Theme',
+    title: 'Ion',
     logo: {
       src: './src/assets/ion-logo.svg'
     },
@@ -30,27 +31,22 @@ export default defineConfig({
         directory: 'reference'
       }
     }],
-    components: {
-      ThemeProvider: './src/components/ThemeProvider.astro',
-      ThemeSelect: './src/components/ThemeSelect.astro',
-      SiteTitle: './src/components/SiteTitle.astro',
-      Sidebar: './src/components/Sidebar.astro',
-      Pagination: './src/components/Pagination.astro',
-      Hero: './src/components/Hero.astro',
-      Head: './src/components/Head.astro',
-      PageTitle: './src/components/PageTitle.astro'
-    },
     customCss: [
       '@fontsource-variable/space-grotesk/index.css',
       '@fontsource/space-mono/400.css',
       '@fontsource/space-mono/700.css',
-      './src/styles/theme.css'
+      './src/styles/global.css'
     ],
     expressiveCode: {
       themes: ['github-dark']
     },
+    lastUpdated: true,
     pagination: false,
-    lastUpdated: true
+    plugins: [
+      ion({
+        iconDir: resolve('./src/icons', import.meta.url),
+      })
+    ]
   })],
   output: "static"
 });

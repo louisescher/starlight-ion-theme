@@ -1,0 +1,8 @@
+{
+  "name": "starlight-ion-theme",
+  "version": "2.0.0",
+  "scripts": {
+    "dev": "\"pnpm --filter docs dev\"",
+    "publish": "\"pnpm --filter starlight-ion-theme publish\""
+  }
+}

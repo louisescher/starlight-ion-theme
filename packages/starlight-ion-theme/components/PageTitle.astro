@@ -1,0 +1,24 @@
+---
+import { Icon } from 'astro-icon/components'
+import { PAGE_TITLE_ID } from './constants';
+import type { Props } from '@astrojs/starlight/props';
+
+const { entry } = Astro.props;
+---
+
+<h1 id={PAGE_TITLE_ID}>
+  {entry.data.title.includes("[") && (
+    <Icon size='28' name={entry.data.title.split("[").pop()?.split("]")[0] || ""} />
+  )}
+  <span>{entry.data.title.split("]").pop()?.trim()}</span>
+</h1>
+
+<style>
+	h1 {
+		margin-top: 1rem;
+		font-size: var(--sl-text-h1);
+		line-height: var(--sl-line-height-headings);
+		font-weight: 600;
+		color: var(--sl-color-white);
+	}
+</style>

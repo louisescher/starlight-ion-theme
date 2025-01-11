@@ -1,7 +1,7 @@
 {
-  "name": "starlight-ion-theme",
+  "name": "docs",
   "type": "module",
-  "version": "1.1.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "node ./dist/server/entry.mjs",
@@ -10,13 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.4",
-    "@astrojs/starlight": "0.30.3",
+    "@astrojs/starlight": "catalog:",
     "@fontsource-variable/space-grotesk": "^5.1.1",
     "@fontsource/space-mono": "^5.1.2",
-    "astro": "5.1.2",
+    "astro": "catalog:",
     "sharp": "^0.33.5",
-    "typescript": "^5.7.2"
+    "typescript": "catalog:",
+    "starlight-ion-theme": "workspace:"
   },
   "packageManager": "pnpm@9.15.2+sha256.022309bb31359142b65bfa889e0406d2eebd5acfffca47e6944acf29d9d6a66b"
 }
