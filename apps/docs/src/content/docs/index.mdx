@@ -1,0 +1,36 @@
+---
+title: Ion
+description: Get started building your docs site with Starlight & the Ion theme.
+tableOfContents: false
+hero:
+  tagline: A sleek, modern theme for Starlight
+  image:
+    file: ../../assets/ion-logo.svg
+  actions:
+    - text: Get started
+      link: /starlight-ion-theme/getting-started/
+      icon: right-arrow
+      variant: primary
+    - text: Read the Starlight docs
+      link: https://starlight.astro.build
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Features
+
+<CardGrid stagger>
+	<Card title="Custom Sidebar" icon="left-caret">
+		Ion comes with a custom sidebar that supports icons and groups.
+	</Card>
+	<Card title="Footer" icon="down-caret">
+		There's a footer that you can customize with your own links.
+	</Card>
+	<Card title="Icons Everywhere" icon="astro">
+		Thanks to built-in `astro-icon` support, you can add icons to your sidebar, footer, site titles and more.
+	</Card>
+	<Card title="Header Badges" icon="approve-check-circle">
+		You can add badges to your headings to draw attention to updated content.
+	</Card>
+</CardGrid>

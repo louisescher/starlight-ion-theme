@@ -1,0 +1,10 @@
+---
+title: "Head"
+---
+
+The `Head` component is used to render the `<head>` element of the document. It is used to set the title, meta tags, and other elements in the `<head>` of the document. Ion's override is pretty much identical to the default Starlight `Head` component, the only difference being that it adds it's own generator tag.
+
+import headComponent from 'starlight-ion-theme/components/Head.astro?raw'
+import { Code } from '@astrojs/starlight/components';
+
+<Code code={headComponent} lang="astro" title="Head.astro" />
