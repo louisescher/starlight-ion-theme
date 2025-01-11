@@ -1,1 +1,1 @@
-packages/starlight-ion-theme/README.md
+./packages/starlight-ion-theme/README.md
