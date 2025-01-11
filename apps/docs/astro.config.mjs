@@ -18,13 +18,8 @@ export default defineConfig({
       label: '[home] Home',
       link: '/'
     }, {
-      label: '[list] Features',
-      link: '/features/'
-    }, {
-      label: '[box] Guides',
-      autogenerate: {
-        directory: 'guides'
-      }
+      label: '[list] Getting Started',
+      link: '/getting-started/'
     }, {
       label: '[book] Reference',
       autogenerate: {

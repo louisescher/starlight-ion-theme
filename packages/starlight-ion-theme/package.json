@@ -5,11 +5,13 @@
 	"exports": {
 		".": "./index.ts",
 		"./ec-theme": "./ec-theme.ts",
-		"./constants": "./constants.ts",
+		"./constants": "./components/constants.ts",
+		"./package.json": "./package.json",
 		"./styles/*": "./styles/*",
 		"./components/*": "./components/*",
 		"./schemas/*": "./schemas/*",
-		"./icons/*": "./icons/*"
+		"./icons/*": "./icons/*",
+		"./utils/*": "./components/utils/*"
 	},
 	"homepage": "https://louisescher.github.io/starlight-ion-theme/",
 	"author": "Louis Escher <louisescher@proton.me>",

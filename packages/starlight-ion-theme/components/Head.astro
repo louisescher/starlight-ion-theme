@@ -1,11 +1,11 @@
 ---
 import type { z } from 'astro/zod';
 import config from 'virtual:starlight/user-config';
-import { version } from '../package.json';
-import type { HeadConfigSchema } from '../schemas/head';
-import { fileWithBase } from './utils/base';
-import { createHead } from './utils/head';
-import { localizedUrl } from './utils/localizedUrl';
+import { version } from 'starlight-ion-theme/package.json';
+import type { HeadConfigSchema } from 'starlight-ion-theme/schemas/head.js';
+import { fileWithBase } from 'starlight-ion-theme/utils/base.js';
+import { createHead } from 'starlight-ion-theme/utils/head.js';
+import { localizedUrl } from 'starlight-ion-theme/utils/localizedUrl.js';
 import type { Props } from '@astrojs/starlight/props';
 
 const { entry, lang, siteTitle } = Astro.props;

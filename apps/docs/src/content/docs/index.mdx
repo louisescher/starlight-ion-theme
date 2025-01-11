@@ -7,8 +7,8 @@ hero:
   image:
     file: ../../assets/ion-logo.svg
   actions:
-    - text: Features Overview
-      link: /starlight-ion-theme/features/
+    - text: Get started
+      link: /starlight-ion-theme/getting-started/
       icon: right-arrow
       variant: primary
     - text: Read the Starlight docs
@@ -18,19 +18,19 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## Features
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="Custom Sidebar" icon="left-caret">
+		Ion comes with a custom sidebar that supports icons and groups.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="Footer" icon="down-caret">
+		There's a footer that you can customize with your own links.
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
+	<Card title="Icons Everywhere" icon="astro">
+		Thanks to built-in `astro-icon` support, you can add icons to your sidebar, footer, site titles and more.
 	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="Header Badges" icon="approve-check-circle">
+		You can add badges to your headings to draw attention to updated content.
 	</Card>
 </CardGrid>

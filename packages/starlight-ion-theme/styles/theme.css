@@ -254,3 +254,7 @@ starlight-file-tree.not-content {
   background-color: var(--sl-color-black);
   border-radius: 12px;
 }
+
+.meta.sl-flex:not(:has(*)) {
+  display: none;
+}
