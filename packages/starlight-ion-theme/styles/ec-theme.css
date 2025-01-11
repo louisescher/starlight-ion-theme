@@ -29,7 +29,7 @@
   border-radius: 16px !important;
 }
 
-figcaption.header span {
+figcaption.header span:not(.is-terminal span) {
   border: none !important;
   border-top-left-radius: 12px !important;
   border-left: 1px solid var(--sl-border) !important;

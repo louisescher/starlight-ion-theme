@@ -2,12 +2,13 @@
 import { Icon } from 'astro-icon/components'
 import { PAGE_TITLE_ID } from 'starlight-ion-theme/constants';
 import type { Props } from '@astrojs/starlight/props';
+import { icons } from 'ion:globals';
 
 const { entry } = Astro.props;
 ---
 
 <h1 id={PAGE_TITLE_ID}>
-  {entry.data.title.includes("[") && (
+  {icons && entry.data.title.includes("[") && (
     <Icon size='28' name={entry.data.title.split("[").pop()?.split("]")[0] || ""} />
   )}
   <span>{entry.data.title.split("]").pop()?.trim()}</span>

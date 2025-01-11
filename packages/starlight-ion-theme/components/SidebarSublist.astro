@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { type SidebarEntry } from 'starlight-ion-theme/utils/navigation.js';
 import Badge from './Badge.astro';
+import { icons } from 'ion:globals';
 
 interface Props {
 	sublist: SidebarEntry[];
@@ -24,7 +25,7 @@ const { sublist, nested, nestedCount } = Astro.props;
 							class:list={[{ individual: !nested }, entry.attrs.class, "flex-link"]}
 							{...entry.attrs}
 						>
-							{entry.label.includes("[") && (
+							{icons && entry.label.includes("[") && (
 								<Icon name={entry.label.split("[").pop()?.split("]")[0] || ""} />
 							)}
 							<span>{entry.label.split("]").pop()?.trim()}</span>
@@ -44,7 +45,7 @@ const { sublist, nested, nestedCount } = Astro.props;
 						>
 							<summary style="pointer-events: none;" class={nested ? "hidden" : ""}>
 								<div class="group-label">
-									{entry.label.includes("[") && (
+									{icons && entry.label.includes("[") && (
 										<Icon name={entry.label.split("[").pop()?.split("]")[0] || ""} />
 									)}
 									<span class="large">{entry.label.split("]").pop()?.trim()}</span>

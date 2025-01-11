@@ -32,14 +32,22 @@ export default defineConfig({
       '@fontsource/space-mono/700.css',
       './src/styles/global.css'
     ],
-    expressiveCode: {
-      themes: ['github-dark']
-    },
     lastUpdated: true,
     pagination: false,
     plugins: [
       ion({
         iconDir: resolve('./src/icons', import.meta.url),
+        footer: {
+          text: '©️ Louis Escher 2025',
+          links: [{
+            text: 'Homepage',
+            href: 'https://louisescher.dev',
+          }],
+          icons: [{
+            name: 'github',
+            href: 'https://github.com/louisescher/starlight-ion-theme'
+          }]
+        }
       })
     ]
   })],

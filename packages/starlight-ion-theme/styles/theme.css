@@ -30,6 +30,10 @@
   --pagefind-ui-primary: var(--sl-color-accent);
 
   --sl-icon-size: 1.25rem;
+
+  --sl-text-4xl: 2rem;
+  --sl-text-3xl: 1.75rem;
+  --sl-text-2xl: 1.5rem;
 }
 
 /* Change background color of sidebar & add border */
@@ -257,4 +261,8 @@ starlight-file-tree.not-content {
 
 .meta.sl-flex:not(:has(*)) {
   display: none;
+}
+
+h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, h6 > code {
+  font-size: .925em !important;
 }

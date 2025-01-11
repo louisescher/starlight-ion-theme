@@ -7,18 +7,162 @@ Ion is a very unique Starlight Theme, since it overrides a lot of the built-in c
 
 ## Installation
 
-Blah blah
+import { Steps } from '@astrojs/starlight/components';
+import { PackageManagers } from 'starlight-package-managers'
+
+<Steps>
+1. Install the theme using npm or yarn:
+    <PackageManagers pkg="starlight-ion-theme"/>
+2. Add the theme to your `astro.config.mjs`:
+    ```js
+    import { ion } from "starlight-ion-theme";
+
+    export default defineConfig({
+      // ...
+      integrations: [
+        starlight({
+          // ...
+          plugins: [
+            ion()
+          ]
+        })
+      ]
+    });
+    ```
+</Steps>
 
 ## Usage 
 
-Icons, header badges
+### Icons
+
+Ion has a unique system for showing icons in site titles and in the sidebar. This is achieved using [`astro-icon`](https://www.astroicon.dev/). If you want to use an icon, first create a directory that will contain all of your icons, for example `src/icons/`. Then, place the SVG files for the icons in that directory.
+
+After you've created the directory, you need to tell Ion where to find the icons. You can do this by specifying the `iconPath` option in your `astro.config.mjs`:
+
+```js
+import { ion, resolve } from "starlight-ion-theme";
+
+export default defineConfig({
+  // ...
+  integrations: [
+    starlight({
+      // ...
+      plugins: [
+        ion({
+          iconPath: resolve("./src/icons", import.meta.url)
+        })
+      ]
+    })
+  ]
+});
+```
+
+Make sure to use the `resolve` function to resolve the path to the icons directory. The second argument (in most cases) should be `import.meta.url`.
+
+#### Using Icons in the Sidebar
+
+You can have icons in the sidebar for top-level pages by specifying the icon name in your `astro.config.mjs`, surrounded by square brackets. The name should be the same as the name of the SVG file in the icons directory:
+
+```js
+// ...
+export default defineConfig({
+  // ...
+  integrations: [
+    starlight({
+      // ...
+      sidebar: [
+        {
+          label: '[home] Home',
+          link: '/'
+        },
+        // ...
+      ]
+    })
+  ]
+});
+```
+
+#### Using Icons in the Site Title
+
+You can also use icons in the site title using the same syntax. In this case, you'd put the icon in the frontmatter of the page:
+
+```md
+---
+title: "[home] My Site"
+---
+```
+
+The `"` characters are required, otherwise Starlight will throw an error.
 
 ## Configuration
 
-All options in here
+### `iconPath`
+- Type: `string | undefined`
+- Default: `undefined`
+
+The `iconPath` option specifies the path to the directory containing the icons. This path needs to be resolved using the `resolve` function, which is exported from the `starlight-ion-theme` package.
+
+### `useCustomECTheme`
+- Type: `boolean | undefined`
+- Default: `true`
+
+The `useCustomECTheme` option specifies whether to use the custom theme for Expressive Code blocks. If set to `false`, the default theme you specified in your `astro.config.mjs` will be used. Disabling this option will also unload the custom CSS for the Expressive Code blocks, meaning you won't have the rounded corners and other overrides that Ion provides.
+
+### `footer`
+- Type: `FooterOptions | undefined`
+- Default: `undefined`
+
+The `footer` option specifies the configuration for the footer. The following options are available:
+
+#### `footer.links`
+- Type: `FooterLink[]`
+- Default: `[]`
+
+An array of links to display in the footer. Each link should be an object with the following properties:
+
+- `label`: The text to display for the link.
+- `link`: The URL to link to.
+- `newTab`: Whether to open the link in a new tab. Defaults to `false`.
+
+#### `footer.text`
+- Type: `string | undefined`
+- Default: `undefined`
+
+The text to display on the left hand side of footer. This can be used to display a copyright notice or other information.
+
+#### `footer.icons`
+- Type: `FooterIcon[]`
+- Default: `[]`
+
+An array of icons to display in the footer. Each icon should be an object with the following properties:
+
+- `icon`: The name of the icon to display. This should be the name of the SVG file in the icons directory.
+- `link`: The URL to link to when the icon is clicked.
+- `newTab`: Whether to open the link in a new tab. Defaults to `false`.
+
+### `overrides.*`
+- Type: `boolean | undefined`
+- Default: `true`
+
+All options under the `overrides` object specify whether to use the custom override for a specific component. If set to `false`, the default component will be used. The following options are available:
+
+- `overrides.ThemeProvider`
+- `overrides.ThemeSelect`
+- `overrides.SiteTitle`
+- `overrides.Sidebar`
+- `overrides.Pagination`
+- `overrides.Hero`
+- `overrides.Head`
+- `overrides.PageTitle`
 
 :::note
 When removing the override on the `Sidebar` component, [sidebar icons](#sidebar-icons) will cease to function.
 :::
 
 ## Modifying the Theme
+
+Ion is fully customizable, meaning you can override pretty much any part of the theme you need. The colors used for the theme are defined using the normal Starlight CSS variables, so you can easily change them in your own stylesheets. 
+
+If you have defined custom component overrides for any of the components that Ion overrides, you can still use them. The custom components will be used instead of the Ion components.
+
+Additionally, if you want to use the Ion overrides and modify them, I encourage you to check out the [component reference](/starlight-ion-theme/reference/components). The pages there contain the full up-to-date source code for all of the components, so you can easily copy them and modify them to your liking. To use them, follow [Starlight's guide on overriding components](https://starlight.astro.build/guides/overriding-components/).

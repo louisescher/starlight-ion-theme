@@ -1,6 +1,8 @@
 ---
 import Icon from 'starlight-ion-theme/components/user-components/Icon.astro';
+import { Icon as AstroIcon } from 'astro-icon/components';
 import type { Props } from '@astrojs/starlight/props';
+import { footer } from 'ion:globals';
 
 const { dir, labels, pagination } = Astro.props;
 const { prev, next } = pagination;
@@ -39,16 +41,22 @@ const nextLink = Astro.locals.t("page.nextLink");
 	}
 </div>
 
-<div class="page-footer">
-	<div class="footer-links">
-		<span>©️ Louis Escher</span>
-		<span>—</span>
-		<a href="https://louisescher.dev/">Homepage</a>
+{footer && (
+	<div class="page-footer">
+		<div class="footer-links">
+			<span>{footer.text}</span>
+			{footer.links && (<span>—</span>)}
+			{footer.links && footer.links.map((link) => (
+				<a href={link.href} target={link.newTab ? '_blank' : '_self'}>{link.text}</a>
+			))}
+		</div>
+		<div class="social-footer-icons">
+			{footer.icons?.map((icon) => (
+				<a href={icon.href} aria-label={icon.name} target={icon.newTab ? '_blank' : '_self'}><AstroIcon name={icon.name as any} size='1.25rem' /></a>
+			))}
+		</div>
 	</div>
-	<div class="social-footer-icons">
-		<a href="https://github.com/louisescher/starlight-ion-theme" aria-label="GitHub Icon"><Icon name="github" size='1.25rem' /></a>
-	</div>
-</div>
+)}
 
 <style>
 	.pagination-links {
