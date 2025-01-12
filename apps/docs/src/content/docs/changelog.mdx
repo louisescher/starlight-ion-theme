@@ -6,11 +6,12 @@ title: "Changelog"
 
 ### New Features
 
-- Added support for full use of `astro-icon`, even with the custom square brackets syntax. This allows for using icons from `@iconify-json/*` anywhere.
+- Exposes full configuration options for `astro-icon`
+- Allows for icons from `@iconify-json/*` packages to be used with the square bracket syntax
 
 ### Breaking Changes
 
-The `iconDir` option has been removed in favor of the `icons` object. This allows for `astro-icon` to be used to its full potential.
+The `iconDir` option has been removed in favor of the `icons` object, which now exposes `astro-icon`'s full configuration options.
 
 To migrate, update your `astro.config.mjs` file to the following:
 

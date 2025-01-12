@@ -22,7 +22,11 @@ export default defineConfig({
       link: '/getting-started/'
     },{
       label: '[changelog] Changelog',
-      link: '/changelog/'
+      link: '/changelog/',
+      badge: {
+        variant: 'tip',
+        text: 'New'
+      }
     }, {
       label: '[book] Reference',
       autogenerate: {

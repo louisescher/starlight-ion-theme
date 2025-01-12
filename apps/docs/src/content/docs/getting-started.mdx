@@ -130,9 +130,11 @@ import HeaderBadge from 'starlight-ion-theme/components/HeaderBadge.astro';
 - Type: `AstroIconOptions | undefined`
 - Default: `undefined`
 
-The `icons` object specifies the configuration for the icons. The options get passed directly to the `astro-icon` plugin, so you can use any of the options that `astro-icon` supports. Check the [astro-icon documentation](https://www.astroicon.dev) for more information. 
+The `icons` object exposes `astro-icon`'s configuration options. Check the [astro-icon documentation](https://www.astroicon.dev) for more information. 
 
-**There is, however, one major difference when it comes to loading local icons:** You *must* specify the `icons.iconPath` option in your `astro.config.mjs` file, using the `resolve` function exported by Ion. The first argument should be the path to the icons directory, and the second argument should be `import.meta.url`.
+:::danger[Using Local Icons]
+When using local icons, you must specify the `iconPath` using the `resolve` function exported by Ion. The first argument should be the path to the icons directory (e.g. `src/icons/`), and the second argument should be `import.meta.url`.
+:::
 
 ### `useCustomECTheme`
 - Type: `boolean | undefined`
