@@ -31,6 +31,9 @@ importers:
       '@fontsource/space-mono':
         specifier: ^5.1.2
         version: 5.1.2
+      '@iconify-json/lucide':
+        specifier: ^1.2.22
+        version: 1.2.22
       astro:
         specifier: 'catalog:'
         version: 5.1.5(rollup@4.30.1)(typescript@5.7.3)(yaml@2.7.0)
@@ -450,6 +453,9 @@ packages:
 
   '@fontsource/space-mono@5.1.2':
     resolution: {integrity: sha512-4EtHA1IZQ8hI7Gyc0hP3gPEZUfet4oqUg722J8WD8TalHwxvsy5sNQw0i08TDMu5gZjkLOtp5wPVScx+l9iSiw==}
+
+  '@iconify-json/lucide@1.2.22':
+    resolution: {integrity: sha512-sHRN/UFVTPTKCA9dVdO34OydvAf5d3CmT16a/U2+VzogI1uIsBXoYILU5oHGFMMq12aMJ65zgr1YOJCI0glxeg==}
 
   '@iconify/tools@4.1.1':
     resolution: {integrity: sha512-Hybu/HGhv6T8nLQhiG9rKx+ekF7NNpPOEQAy7JRSKht3s3dcFSsPccYzk24Znc9MTxrR6Gak3cg6CPP5dyvS2Q==}
@@ -2589,6 +2595,10 @@ snapshots:
   '@fontsource-variable/space-grotesk@5.1.1': {}
 
   '@fontsource/space-mono@5.1.2': {}
+
+  '@iconify-json/lucide@1.2.22':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/tools@4.1.1':
     dependencies:

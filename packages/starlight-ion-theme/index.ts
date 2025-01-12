@@ -5,7 +5,7 @@ import path from 'pathe'
 import type { StarlightExpressiveCodeOptions } from "@astrojs/starlight/expressive-code";
 import { ionDark } from "./ec-theme";
 import type { AstroIntegration } from "astro";
-import { viteVirtualModulePluginBuilder } from "./utils/virtual-module-plugin-builder";
+import { viteVirtualModulePluginBuilder } from "./utils/virtual-module-plugin-builder"
 
 interface FooterLink {
   text: string;
@@ -27,9 +27,11 @@ interface FooterOptions {
 
 interface Config {
   /**
-   * The directory where the icons are stored. Please use the `resolve` function exported from 'starlight-ion-theme' to set this option.
+   * Options passed to `astro-icon`. When setting the `iconDir` option, you must use the `resolve` function exported from this module to resolve the path.
+   * 
+   * For more information, see the [astro-icon documentation](https://astroicon.dev).
    */
-  iconDir?: string;
+  icons: Parameters<typeof icon>[0];
   /**
    * Whether to use the custom EC theme. Defaults to `true`. Setting this to false will both remove the custom EC theme and the custom CSS.
    */
@@ -96,7 +98,7 @@ function integration(pluginConfig: Config): AstroIntegration {
         const globals = viteVirtualModulePluginBuilder(
           'ion:globals',
           'ion-theme-globals',
-`export const icons = ${JSON.stringify(!!pluginConfig.iconDir)};
+`export const icons = ${JSON.stringify(!!pluginConfig.icons)};
 export const footer = ${JSON.stringify(pluginConfig.footer)};`)
 
         updateConfig({
@@ -110,7 +112,7 @@ export const footer = ${JSON.stringify(pluginConfig.footer)};`)
 }
 
 function createPlugin(pluginConfig: Config): StarlightPlugin {
-  if (pluginConfig?.iconDir && !path.isAbsolute(pluginConfig?.iconDir)) {
+  if (pluginConfig?.icons && pluginConfig.icons.iconDir && !path.isAbsolute(pluginConfig.icons.iconDir)) {
     throw new Error('Please use the `resolve` function exported from \'starlight-ion-theme\' to set the `iconDir` option.');
   }
 
@@ -119,10 +121,7 @@ function createPlugin(pluginConfig: Config): StarlightPlugin {
 		hooks: {
 			setup: ({ config, updateConfig, addIntegration }) => {
         addIntegration(integration(pluginConfig));
-
-        addIntegration(icon({
-          iconDir: pluginConfig?.iconDir,
-        }));
+        addIntegration(icon(pluginConfig.icons));
 
         const customCss = config.customCss 
           ? ['starlight-ion-theme/styles/theme.css', ...config.customCss] 

@@ -1,0 +1,45 @@
+---
+title: "Changelog"
+---
+
+## v2.1.0 (Jan. 12, 2025)
+
+### New Features
+
+- Added support for full use of `astro-icon`, even with the custom square brackets syntax. This allows for using icons from `@iconify-json/*` anywhere.
+
+### Breaking Changes
+
+The `iconDir` option has been removed in favor of the `icons` object. This allows for `astro-icon` to be used to its full potential.
+
+To migrate, update your `astro.config.mjs` file to the following:
+
+```js del={10} ins={11-13}
+import { ion, resolve } from "starlight-ion-theme";
+
+export default defineConfig({
+  // ...
+  integrations: [
+    starlight({
+      // ...
+      plugins: [
+        ion({
+          iconPath: resolve("./src/icons", import.meta.url),
+          icons: {
+            iconPath: resolve("./src/icons", import.meta.url)
+          },
+        })
+      ]
+    })
+  ]
+});
+```
+
+## v2.0.1 (Jan. 11, 2025)
+### Bug Fixes
+- Add missing files to npm release.
+
+## v2.0.0 (Jan. 11, 2025)
+
+### Breaking Changes
+- Refactored Ion into a Starlight plugin.
