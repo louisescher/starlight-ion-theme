@@ -20,6 +20,13 @@ export default defineConfig({
     }, {
       label: '[list] Getting Started',
       link: '/getting-started/'
+    },{
+      label: '[changelog] Changelog',
+      link: '/changelog/',
+      badge: {
+        variant: 'tip',
+        text: 'New'
+      }
     }, {
       label: '[book] Reference',
       autogenerate: {
@@ -36,7 +43,9 @@ export default defineConfig({
     pagination: false,
     plugins: [
       ion({
-        iconDir: resolve('./src/icons', import.meta.url),
+        icons: {
+          iconDir: resolve('./src/icons', import.meta.url),
+        },
         footer: {
           text: '©️ Louis Escher 2025',
           links: [{

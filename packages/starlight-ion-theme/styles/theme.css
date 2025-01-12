@@ -219,6 +219,11 @@ dialog {
   top: 1px;
 }
 
+.flex-link .sl-badge {
+  position: relative;
+  top: 2px;
+}
+
 /* Remove default padding on main since we have a footer */
 main:has(.page-footer) {
   padding-bottom: 0 !important;

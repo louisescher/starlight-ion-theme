@@ -35,9 +35,14 @@ import { PackageManagers } from 'starlight-package-managers'
 
 ### Icons
 
-Ion has a unique system for showing icons in site titles and in the sidebar. This is achieved using [`astro-icon`](https://www.astroicon.dev/). If you want to use an icon, first create a directory that will contain all of your icons, for example `src/icons/`. Then, place the SVG files for the icons in that directory.
+Ion has a unique system for showing icons in site titles and in the sidebar. This is achieved using [`astro-icon`](https://www.astroicon.dev/). 
 
-After you've created the directory, you need to tell Ion where to find the icons. You can do this by specifying the `iconPath` option in your `astro.config.mjs`:
+If you want to use an icon, you have two options:
+
+#### Local Icons
+First, create a directory that will contain all of your icons, for example `src/icons/`. Then, place the SVG files for the icons in that directory.
+
+After you've created the directory, you need to tell Ion where to find the icons. You can do this by specifying the `icons.iconPath` option in your `astro.config.mjs`:
 
 ```js
 import { ion, resolve } from "starlight-ion-theme";
@@ -49,7 +54,9 @@ export default defineConfig({
       // ...
       plugins: [
         ion({
-          iconPath: resolve("./src/icons", import.meta.url)
+          icons: {
+            iconPath: resolve("./src/icons", import.meta.url)
+          },
         })
       ]
     })
@@ -57,11 +64,16 @@ export default defineConfig({
 });
 ```
 
-Make sure to use the `resolve` function to resolve the path to the icons directory. The second argument (in most cases) should be `import.meta.url`.
+Make sure to use the `resolve` function to resolve the path to the icons directory. The second argument (in most cases) should be `import.meta.url`. When no icon path is set, icons will not be loaded.
 
-#### Using Icons in the Sidebar
+#### External Icons
 
-You can have icons in the sidebar for top-level pages by specifying the icon name in your `astro.config.mjs`, surrounded by square brackets. The name should be the same as the name of the SVG file in the icons directory:
+Just like `astro-icon`, Ion supports using icons from `@iconify-json/*` packages. Instead of having to download the icons and place them in a directory, you can just install the package and use the icons directly.
+
+### Using Icons
+
+#### In the Sidebar
+You can have icons in the sidebar for top-level pages by specifying the icon name in your `astro.config.mjs`, surrounded by square brackets. The name should be the same as the name of the SVG file in the icons directory, or the name of the icon from `@iconify-json/*`, prefixed with the package name:
 
 ```js
 // ...
@@ -75,6 +87,14 @@ export default defineConfig({
           label: '[home] Home',
           link: '/'
         },
+        {
+          label: '[lucide:list] Getting Started', // A list icon from @iconify-json/lucide
+          link: '/getting-started'
+        },
+        {
+          label: '[fe:loop] Changelog', // A loop icon from @iconify-json/fe (feather icons)
+          link: '/changelog'
+        },
         // ...
       ]
     })
@@ -82,7 +102,7 @@ export default defineConfig({
 });
 ```
 
-#### Using Icons in the Site Title
+#### In the Site Title
 
 You can also use icons in the site title using the same syntax. In this case, you'd put the icon in the frontmatter of the page:
 
@@ -92,7 +112,7 @@ title: "[home] My Site"
 ---
 ```
 
-The `"` characters are required, otherwise Starlight will throw an error.
+The `"` characters are required, otherwise Starlight will throw an error. Similar to the sidebar, the name can either be a local icon's name or an icon from `@iconify-json/*`, prefixed with the package name.
 
 ### Header Badges
 
@@ -106,11 +126,15 @@ import HeaderBadge from 'starlight-ion-theme/components/HeaderBadge.astro';
 
 ## Configuration
 
-### `iconPath`
-- Type: `string | undefined`
+### `icons.*`
+- Type: `AstroIconOptions | undefined`
 - Default: `undefined`
 
-The `iconPath` option specifies the path to the directory containing the icons. This path needs to be resolved using the `resolve` function, which is exported from the `starlight-ion-theme` package.
+The `icons` object exposes `astro-icon`'s configuration options. Check the [astro-icon documentation](https://www.astroicon.dev) for more information. 
+
+:::danger[Using Local Icons]
+When using local icons, you must specify the `iconPath` using the `resolve` function exported by Ion. The first argument should be the path to the icons directory (e.g. `src/icons/`), and the second argument should be `import.meta.url`.
+:::
 
 ### `useCustomECTheme`
 - Type: `boolean | undefined`

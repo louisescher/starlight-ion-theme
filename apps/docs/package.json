@@ -13,6 +13,7 @@
     "@astrojs/starlight": "catalog:",
     "@fontsource-variable/space-grotesk": "^5.1.1",
     "@fontsource/space-mono": "^5.1.2",
+    "@iconify-json/lucide": "^1.2.22",
     "astro": "catalog:",
     "sharp": "^0.33.5",
     "starlight-ion-theme": "workspace:",
