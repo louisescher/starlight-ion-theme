@@ -45,7 +45,7 @@ First, create a directory that will contain all of your icons, for example `src/
 After you've created the directory, you need to tell Ion where to find the icons. You can do this by specifying the `icons.iconPath` option in your `astro.config.mjs`:
 
 ```js
-import { ion, resolve } from "starlight-ion-theme";
+import { ion } from "starlight-ion-theme";
 
 export default defineConfig({
   // ...
@@ -55,7 +55,7 @@ export default defineConfig({
       plugins: [
         ion({
           icons: {
-            iconPath: resolve("./src/icons", import.meta.url)
+            iconPath: "./src/icons"
           },
         })
       ]
@@ -63,8 +63,6 @@ export default defineConfig({
   ]
 });
 ```
-
-Make sure to use the `resolve` function to resolve the path to the icons directory. The second argument (in most cases) should be `import.meta.url`. When no icon path is set, icons will not be loaded.
 
 #### External Icons
 
@@ -130,11 +128,7 @@ import HeaderBadge from 'starlight-ion-theme/components/HeaderBadge.astro';
 - Type: `AstroIconOptions | undefined`
 - Default: `undefined`
 
-The `icons` object exposes `astro-icon`'s configuration options. Check the [astro-icon documentation](https://www.astroicon.dev) for more information. 
-
-:::danger[Using Local Icons]
-When using local icons, you must specify the `iconPath` using the `resolve` function exported by Ion. The first argument should be the path to the icons directory (e.g. `src/icons/`), and the second argument should be `import.meta.url`.
-:::
+The `icons` object exposes `astro-icon`'s configuration options. Check the [astro-icon documentation](https://www.astroicon.dev) for more information.
 
 ### `useCustomECTheme`
 - Type: `boolean | undefined`

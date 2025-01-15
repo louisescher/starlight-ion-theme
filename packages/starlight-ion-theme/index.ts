@@ -83,6 +83,7 @@ interface Config {
  * Resolves a path relative to the base path.
  * @param path - The path to resolve.
  * @param base - The base path to resolve from. Usually `import.meta.url`.
+ * @deprecated
  */
 function resolve(path: string, base: string) {
   const { resolve } = createResolver(base);
