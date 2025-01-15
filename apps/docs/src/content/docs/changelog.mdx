@@ -2,6 +2,35 @@
 title: "Changelog"
 ---
 
+## v2.1.1 (Jan. 15, 2025)
+
+### Non-Breaking Changes
+
+Starting with this release, you no longer need to use the `resolve` function exported by the plugin to resolve the path to your local icon directory:
+
+```js del={11} ins={12}
+import { ion, resolve } from "starlight-ion-theme";
+
+export default defineConfig({
+  // ...
+  integrations: [
+    starlight({
+      // ...
+      plugins: [
+        ion({
+          icons: {
+            iconPath: resolve("./src/icons", import.meta.url),
+            iconPath: "./src/icons",
+          },
+        })
+      ]
+    })
+  ]
+});
+```
+
+It is recommended to stop using the function, as it has been marked as deprecated. For compatibility reasons, the function will still be exported from the package until the next minor release.
+
 ## v2.1.0 (Jan. 12, 2025)
 
 ### New Features

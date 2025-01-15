@@ -44,7 +44,7 @@ export default defineConfig({
     plugins: [
       ion({
         icons: {
-          iconDir: resolve('./src/icons', import.meta.url),
+          iconDir: './src/icons',
         },
         footer: {
           text: '©️ Louis Escher 2025',

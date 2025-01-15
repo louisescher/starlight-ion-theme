@@ -83,6 +83,7 @@ interface Config {
  * Resolves a path relative to the base path.
  * @param path - The path to resolve.
  * @param base - The base path to resolve from. Usually `import.meta.url`.
+ * @deprecated
  */
 function resolve(path: string, base: string) {
   const { resolve } = createResolver(base);
@@ -99,7 +100,7 @@ function integration(pluginConfig: Config): AstroIntegration {
           'ion:globals',
           'ion-theme-globals',
 `export const icons = ${JSON.stringify(!!pluginConfig.icons)};
-export const footer = ${JSON.stringify(pluginConfig.footer)};`)
+export const footer = ${JSON.stringify(pluginConfig.footer)};`);
 
         updateConfig({
           vite: {
@@ -112,10 +113,6 @@ export const footer = ${JSON.stringify(pluginConfig.footer)};`)
 }
 
 function createPlugin(pluginConfig: Config): StarlightPlugin {
-  if (pluginConfig?.icons && pluginConfig.icons.iconDir && !path.isAbsolute(pluginConfig.icons.iconDir)) {
-    throw new Error('Please use the `resolve` function exported from \'starlight-ion-theme\' to set the `iconDir` option.');
-  }
-
 	return {
 		name: "starlight-ion-theme",
 		hooks: {

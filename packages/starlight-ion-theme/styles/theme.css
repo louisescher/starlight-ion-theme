@@ -1,9 +1,5 @@
 /* Specify colors. NOTE: YOU CAN CUSTOMIZE THESE HOWEVER YOU WANT! */
 :root {
-  /* Font */
-  --sl-font: 'Space Grotesk', sans-serif;
-  --sl-font-system-mono: "Space Mono", monospace;
-
   /* Dark mode colors */
 	--sl-color-accent-low: #3c0017;
 	--sl-color-accent: #bd0249;
