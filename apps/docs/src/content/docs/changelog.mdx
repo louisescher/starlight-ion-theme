@@ -2,6 +2,12 @@
 title: "Changelog"
 ---
 
+## v2.1.2 (Jan. 25, 2025)
+
+### Bug Fixes
+
+- The plugin configuration is now optional, allowing you to use Ion without any configuration.
+
 ## v2.1.1 (Jan. 15, 2025)
 
 ### Non-Breaking Changes
@@ -19,8 +25,8 @@ export default defineConfig({
       plugins: [
         ion({
           icons: {
-            iconPath: resolve("./src/icons", import.meta.url),
-            iconPath: "./src/icons",
+            iconDir: resolve("./src/icons", import.meta.url),
+            iconDir: "./src/icons",
           },
         })
       ]
@@ -54,9 +60,9 @@ export default defineConfig({
       // ...
       plugins: [
         ion({
-          iconPath: resolve("./src/icons", import.meta.url),
+          iconDir: resolve("./src/icons", import.meta.url),
           icons: {
-            iconPath: resolve("./src/icons", import.meta.url)
+            iconDir: resolve("./src/icons", import.meta.url)
           },
         })
       ]
