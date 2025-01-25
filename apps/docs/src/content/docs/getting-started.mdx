@@ -42,7 +42,7 @@ If you want to use an icon, you have two options:
 #### Local Icons
 First, create a directory that will contain all of your icons, for example `src/icons/`. Then, place the SVG files for the icons in that directory.
 
-After you've created the directory, you need to tell Ion where to find the icons. You can do this by specifying the `icons.iconPath` option in your `astro.config.mjs`:
+After you've created the directory, you need to tell Ion where to find the icons. You can do this by specifying the `icons.iconDir` option in your `astro.config.mjs`:
 
 ```js
 import { ion } from "starlight-ion-theme";
@@ -55,7 +55,7 @@ export default defineConfig({
       plugins: [
         ion({
           icons: {
-            iconPath: "./src/icons"
+            iconDir: "./src/icons"
           },
         })
       ]

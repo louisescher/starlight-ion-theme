@@ -91,7 +91,7 @@ function resolve(path: string, base: string) {
   return resolve(path);
 }
 
-function integration(pluginConfig: Config): AstroIntegration {
+function integration(pluginConfig?: Config): AstroIntegration {
   return {
     name: 'Ion',
     hooks: {
@@ -99,8 +99,8 @@ function integration(pluginConfig: Config): AstroIntegration {
         const globals = viteVirtualModulePluginBuilder(
           'ion:globals',
           'ion-theme-globals',
-`export const icons = ${JSON.stringify(!!pluginConfig.icons)};
-export const footer = ${JSON.stringify(pluginConfig.footer)};`);
+`export const icons = ${JSON.stringify(pluginConfig ? !!pluginConfig.icons : false)};
+export const footer = ${JSON.stringify(pluginConfig?.footer || { text: "" })};`);
 
         updateConfig({
           vite: {
@@ -112,13 +112,13 @@ export const footer = ${JSON.stringify(pluginConfig.footer)};`);
   }
 }
 
-function createPlugin(pluginConfig: Config): StarlightPlugin {
+function createPlugin(pluginConfig?: Config): StarlightPlugin {
 	return {
 		name: "starlight-ion-theme",
 		hooks: {
 			setup: ({ config, updateConfig, addIntegration }) => {
         addIntegration(integration(pluginConfig));
-        addIntegration(icon(pluginConfig.icons));
+        addIntegration(icon(pluginConfig ? pluginConfig.icons : undefined));
 
         const customCss = config.customCss 
           ? ['starlight-ion-theme/styles/theme.css', ...config.customCss] 
