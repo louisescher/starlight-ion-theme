@@ -4,7 +4,7 @@ import { Icon as AstroIcon } from 'astro-icon/components';
 import type { Props } from '@astrojs/starlight/props';
 import { footer } from 'ion:globals';
 
-const { dir, labels, pagination } = Astro.props;
+const { dir, pagination } = Astro.locals.starlightRoute;
 const { prev, next } = pagination;
 const isRtl = dir === 'rtl';
 

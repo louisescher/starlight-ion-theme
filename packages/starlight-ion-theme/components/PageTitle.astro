@@ -4,7 +4,7 @@ import { PAGE_TITLE_ID } from 'starlight-ion-theme/constants';
 import type { Props } from '@astrojs/starlight/props';
 import { icons } from 'ion:globals';
 
-const { entry } = Astro.props;
+const { entry } = Astro.locals.starlightRoute;
 ---
 
 <h1 id={PAGE_TITLE_ID}>

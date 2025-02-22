@@ -2,14 +2,11 @@
 import { logos } from 'virtual:starlight/user-images';
 import config from 'virtual:starlight/user-config';
 import type { Props } from '@astrojs/starlight/props';
-import { formatPath } from 'starlight-ion-theme/utils/format-path.js';
 
-const { siteTitle } = Astro.props;
-
-const href = formatPath(Astro.props.locale || '/');
+const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute;
 ---
 
-<a href={href} class="site-title sl-flex">
+<a href={siteTitleHref} class="site-title sl-flex">
 	{
 		config.logo && logos.dark && (
 			<>

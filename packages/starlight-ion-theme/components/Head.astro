@@ -8,7 +8,7 @@ import { createHead } from 'starlight-ion-theme/utils/head.js';
 import { localizedUrl } from 'starlight-ion-theme/utils/localizedUrl.js';
 import type { Props } from '@astrojs/starlight/props';
 
-const { entry, lang, siteTitle } = Astro.props;
+const { entry, lang, siteTitle } = Astro.locals.starlightRoute;
 const { data } = entry;
 
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
