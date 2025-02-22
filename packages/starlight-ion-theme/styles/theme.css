@@ -32,6 +32,18 @@
   --sl-text-2xl: 1.5rem;
 }
 
+:root[data-theme='light'] {
+	--sl-color-accent-low: #ff78ac;
+	--sl-color-accent: #bd0249;
+	--sl-color-accent-high: #3c0017;
+
+	--sl-color-red-low: #ff78ac;
+  --sl-color-red: #bd0249;
+	--sl-color-red-high: #3c0017;
+
+  --pagefind-ui-primary: var(--sl-color-accent);
+}
+
 /* Change background color of sidebar & add border */
 #starlight__sidebar {
   background-color: var(--sl-color-black);

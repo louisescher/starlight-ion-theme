@@ -9,7 +9,8 @@ export default defineConfig({
   integrations: [starlight({
     title: 'Ion',
     logo: {
-      src: './src/assets/ion-logo.svg'
+      dark: './src/assets/ion-logo.svg',
+      light: './src/assets/ion-logo-light.svg',
     },
     social: {
       github: 'https://github.com/louisescher/starlight-ion-theme'

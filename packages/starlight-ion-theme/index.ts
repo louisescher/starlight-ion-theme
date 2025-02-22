@@ -1,9 +1,8 @@
 import type { StarlightPlugin } from "@astrojs/starlight/types";
 import icon from 'astro-icon';
 import { createResolver } from "./utils/create-resolver";
-import path from 'pathe'
 import type { StarlightExpressiveCodeOptions } from "@astrojs/starlight/expressive-code";
-import { ionDark } from "./ec-theme";
+import { ionDark, ionLight } from "./ec-theme";
 import type { AstroIntegration } from "astro";
 import { viteVirtualModulePluginBuilder } from "./utils/virtual-module-plugin-builder"
 
@@ -133,7 +132,7 @@ function createPlugin(pluginConfig?: Config): StarlightPlugin {
         if (pluginConfig?.useCustomECTheme !== false && !!ecConfig) {
           if (typeof ecConfig === 'boolean') ecConfig = {};
 
-          ecConfig.themes = [ionDark];
+          ecConfig.themes = [ionDark, ionLight];
         }
 
         const userSpecifiedComponents = config.components || {};
@@ -142,8 +141,6 @@ function createPlugin(pluginConfig?: Config): StarlightPlugin {
         updateConfig({
           customCss,
           components: {
-            ThemeProvider: userSpecifiedComponents.ThemeProvider || enabledOverrides.ThemeProvider !== false ? 'starlight-ion-theme/components/ThemeProvider.astro' : undefined,
-            ThemeSelect: userSpecifiedComponents.ThemeSelect || enabledOverrides.ThemeSelect !== false ? 'starlight-ion-theme/components/ThemeSelect.astro' : undefined,
             SiteTitle: userSpecifiedComponents.SiteTitle || enabledOverrides.SiteTitle !== false ? 'starlight-ion-theme/components/SiteTitle.astro' : undefined,
             Sidebar: userSpecifiedComponents.Sidebar || enabledOverrides.Sidebar !== false ? 'starlight-ion-theme/components/Sidebar.astro' : undefined,
             Pagination: userSpecifiedComponents.Pagination || enabledOverrides.Pagination !== false ? 'starlight-ion-theme/components/Pagination.astro' : undefined,

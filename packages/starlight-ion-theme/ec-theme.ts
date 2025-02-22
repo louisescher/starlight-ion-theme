@@ -1,4 +1,5 @@
 import githubDark from '@shikijs/themes/github-dark';
+import githubLight from '@shikijs/themes/github-light';
 import type { ThemeRegistration } from 'shiki';
 
 const ionDark: ThemeRegistration = {
@@ -17,4 +18,20 @@ const ionDark: ThemeRegistration = {
   }
 };
 
-export { ionDark };
+const ionLight: ThemeRegistration = {
+  ...githubLight,
+  name: 'Ion Light',
+  colors: {
+    ...githubLight.colors,
+    "activityBar.background": "#ffffff",
+    "editor.background": "#ffffff",
+    "statusBar.background": "#ffffff",
+    "statusBarItem.remoteBackground": "#ffffff",
+    "tab.activeBackground": "#ffffff",
+    "titleBar.activeBackground": "#ffffff",
+    "editorGroupHeader.tabsBackground": "#e0e0e0",
+    "panel.background": "#ffffff",
+  }
+};
+
+export { ionDark, ionLight };
