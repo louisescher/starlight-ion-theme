@@ -44,14 +44,6 @@ interface Config {
    */
   overrides?: {
     /**
-     * Set to `false` to enable the default ThemeProvider component. Ion's version just sets the theme to always be dark. Defaults to `true`.
-     */
-    ThemeProvider?: boolean;
-    /**
-     * Set to `false` to show the ThemeSelect that Ion overrides. Defaults to `true`.
-     */
-    ThemeSelect?: boolean;
-    /**
      * Set to `false` to disable Ion's custom SiteTitle override. Defaults to `true`.
      */
     SiteTitle?: boolean;
