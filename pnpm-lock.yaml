@@ -7,8 +7,8 @@ settings:
 catalogs:
   default:
     '@astrojs/starlight':
-      specifier: ^0.31.1
-      version: 0.31.1
+      specifier: ^0.32
+      version: 0.32.1
     astro:
       specifier: ^5.1.10
       version: 5.1.10
@@ -54,7 +54,7 @@ importers:
     dependencies:
       '@astrojs/starlight':
         specifier: 'catalog:'
-        version: 0.31.1(astro@5.1.10(rollup@4.30.1)(typescript@5.7.3)(yaml@2.7.0))
+        version: 0.32.1(astro@5.1.10(rollup@4.30.1)(typescript@5.7.3)(yaml@2.7.0))
       '@iconify/tools':
         specifier: ^4.1.1
         version: 4.1.1
@@ -119,11 +119,6 @@ packages:
 
   '@astrojs/sitemap@3.2.1':
     resolution: {integrity: sha512-uxMfO8f7pALq0ADL6Lk68UV6dNYjJ2xGUzyjjVj60JLBs5a6smtlkBYv3tQ0DzoqwS7c9n4FUx5lgv0yPo/fgA==}
-
-  '@astrojs/starlight@0.31.1':
-    resolution: {integrity: sha512-VIVkHugwgtEqJPiRH8+ouP0UqUfdmpBO9C64R+6QaQ2qmADNkI/BA3/YAJHTBZYlMQQGEEuLJwD9qpaUovi52Q==}
-    peerDependencies:
-      astro: ^5.1.5
 
   '@astrojs/starlight@0.32.1':
     resolution: {integrity: sha512-+GPtDzi7wkbooHnMZqGjCoV0qwkYZAFSg3FhRm8jSXXSkLJcw4rgT6vnee/LuJhbVq9kvHVcevtgK8tTxy3Xeg==}
@@ -2377,7 +2372,7 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.24.1
 
-  '@astrojs/starlight@0.31.1(astro@5.1.10(rollup@4.30.1)(typescript@5.7.3)(yaml@2.7.0))':
+  '@astrojs/starlight@0.32.1(astro@5.1.10(rollup@4.30.1)(typescript@5.7.3)(yaml@2.7.0))':
     dependencies:
       '@astrojs/mdx': 4.0.5(astro@5.1.10(rollup@4.30.1)(typescript@5.7.3)(yaml@2.7.0))
       '@astrojs/sitemap': 3.2.1
@@ -2394,6 +2389,7 @@ snapshots:
       hastscript: 9.0.0
       i18next: 23.16.8
       js-yaml: 4.1.0
+      klona: 2.0.6
       mdast-util-directive: 3.0.0
       mdast-util-to-markdown: 2.1.2
       mdast-util-to-string: 4.0.0

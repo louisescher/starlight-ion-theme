@@ -2,6 +2,12 @@
 title: "Changelog"
 ---
 
+## v2.2.3 (Mar. 13, 2025)
+
+### Fixes
+
+- Resolve peer dependency mismatch (`unmet peer @astrojs/starlight@^0.31.1: found 0.32.x`)
+
 ## v2.2.2 (Feb. 22, 2025)
 
 ### Fixes
@@ -48,10 +54,10 @@ export default defineConfig({
             iconDir: resolve("./src/icons", import.meta.url),
             iconDir: "./src/icons",
           },
-        })
-      ]
-    })
-  ]
+        }),
+      ],
+    }),
+  ],
 });
 ```
 
@@ -82,20 +88,23 @@ export default defineConfig({
         ion({
           iconDir: resolve("./src/icons", import.meta.url),
           icons: {
-            iconDir: resolve("./src/icons", import.meta.url)
+            iconDir: resolve("./src/icons", import.meta.url),
           },
-        })
-      ]
-    })
-  ]
+        }),
+      ],
+    }),
+  ],
 });
 ```
 
 ## v2.0.1 (Jan. 11, 2025)
+
 ### Bug Fixes
+
 - Add missing files to npm release.
 
 ## v2.0.0 (Jan. 11, 2025)
 
 ### Breaking Changes
+
 - Refactored Ion into a Starlight plugin.
