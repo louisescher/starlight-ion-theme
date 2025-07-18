@@ -1,5 +1,5 @@
-import { fileURLToPath } from 'node:url';
-import { dirname, resolve } from 'pathe';
+import { fileURLToPath } from "node:url";
+import { dirname, resolve } from "pathe";
 
 /**
  * From the Astro Integration Kit (https://astro-integration-kit.netlify.app/).
@@ -19,12 +19,12 @@ import { dirname, resolve } from 'pathe';
  * This way, you do not have to add your plugin to your package.json `exports`.
  */
 export const createResolver = (_base: string) => {
-	let base = _base;
-	if (base.startsWith('file://')) {
-		base = dirname(fileURLToPath(base));
-	}
+  let base = _base;
+  if (base.startsWith("file://")) {
+    base = dirname(fileURLToPath(base));
+  }
 
-	return {
-		resolve: (...path: Array<string>) => resolve(base, ...path),
-	};
+  return {
+    resolve: (...path: Array<string>) => resolve(base, ...path),
+  };
 };

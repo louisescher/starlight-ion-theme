@@ -1,6 +1,6 @@
-import type { AstroConfig } from 'astro';
+import type { AstroConfig } from "astro";
 
-type VitePlugin = Required<AstroConfig['vite']>['plugins'][number];
+type VitePlugin = Required<AstroConfig["vite"]>["plugins"][number];
 
 /**
  * Builds a Vite plugin that creates a virtual module.
@@ -11,27 +11,27 @@ type VitePlugin = Required<AstroConfig['vite']>['plugins'][number];
  * @returns A Vite plugin that resolves and loads the virtual module.
  */
 export function viteVirtualModulePluginBuilder(
-	moduleId: string,
-	name: string,
-	moduleContent: string
+  moduleId: string,
+  name: string,
+  moduleContent: string
 ) {
-	return function modulePlugin(): VitePlugin {
-		const resolvedVirtualModuleId = `\0${moduleId}`; // Prefix with \0 to avoid conflicts
+  return function modulePlugin(): VitePlugin {
+    const resolvedVirtualModuleId = `\0${moduleId}`; // Prefix with \0 to avoid conflicts
 
-		return {
-			name,
-			resolveId(id) {
-				if (id === moduleId) {
-					return resolvedVirtualModuleId;
-				}
-				return;
-			},
-			load(id) {
-				if (id === resolvedVirtualModuleId) {
-					return moduleContent;
-				}
-				return;
-			},
-		};
-	};
+    return {
+      name,
+      resolveId(id) {
+        if (id === moduleId) {
+          return resolvedVirtualModuleId;
+        }
+        return;
+      },
+      load(id) {
+        if (id === resolvedVirtualModuleId) {
+          return moduleContent;
+        }
+        return;
+      },
+    };
+  };
 }

@@ -16,7 +16,7 @@ interface FooterOptions {
   icons?: FooterIcon[];
 }
 
-declare module 'ion:globals' {
+declare module "ion:globals" {
   /**
    * Whether or not to use icons.
    */
