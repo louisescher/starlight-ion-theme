@@ -11,7 +11,8 @@
     "./components/*": "./components/*",
     "./schemas/*": "./schemas/*",
     "./icons/*": "./icons/*",
-    "./utils/*": "./components/utils/*"
+    "./utils/*": "./components/utils/*",
+    "./middleware": "./middleware.ts"
   },
   "homepage": "https://louisescher.github.io/starlight-ion-theme/",
   "author": "Louis Escher <louisescher@proton.me>",

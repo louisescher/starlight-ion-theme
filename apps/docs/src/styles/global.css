@@ -1,11 +1,15 @@
 :root {
   /* Font */
-  --sl-font: 'Space Grotesk Variable', sans-serif;
+  --sl-font: "Space Grotesk Variable", sans-serif;
   --sl-font-system-mono: "Space Mono", monospace;
 }
 
 /* Change font & remove ligatures for all code & the file tree */
-.expressive-code, pre, .expressive-code pre > code, code, starlight-file-tree {
-  font-family: 'Space Mono', monospace !important;
+.expressive-code,
+pre,
+.expressive-code pre > code,
+code,
+starlight-file-tree {
+  font-family: "Space Mono", monospace !important;
   font-variant-ligatures: none !important;
 }

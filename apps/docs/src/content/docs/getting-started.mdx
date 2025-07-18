@@ -7,13 +7,17 @@ Ion is a very unique Starlight Theme, since it overrides a lot of the built-in c
 
 ## Installation
 
-import { Steps } from '@astrojs/starlight/components';
-import { PackageManagers } from 'starlight-package-managers'
+import { Steps } from "@astrojs/starlight/components";
+import { PackageManagers } from "starlight-package-managers";
 
 <Steps>
-1. Install the theme using npm or yarn:
-    <PackageManagers pkg="starlight-ion-theme"/>
-2. Add the theme to your `astro.config.mjs`:
+
+1.  Install the theme using npm or yarn:
+
+    <PackageManagers pkg="starlight-ion-theme" />
+
+2.  Add the theme to your `astro.config.mjs`:
+
     ```js
     import { ion } from "starlight-ion-theme";
 
@@ -22,24 +26,24 @@ import { PackageManagers } from 'starlight-package-managers'
       integrations: [
         starlight({
           // ...
-          plugins: [
-            ion()
-          ]
-        })
-      ]
+          plugins: [ion()],
+        }),
+      ],
     });
     ```
+
 </Steps>
 
-## Usage 
+## Usage
 
 ### Icons
 
-Ion has a unique system for showing icons in site titles and in the sidebar. This is achieved using [`astro-icon`](https://www.astroicon.dev/). 
+Ion has a unique system for showing icons in site titles and in the sidebar. This is achieved using [`astro-icon`](https://www.astroicon.dev/).
 
 If you want to use an icon, you have two options:
 
 #### Local Icons
+
 First, create a directory that will contain all of your icons, for example `src/icons/`. Then, place the SVG files for the icons in that directory.
 
 After you've created the directory, you need to tell Ion where to find the icons. You can do this by specifying the `icons.iconDir` option in your `astro.config.mjs`:
@@ -55,12 +59,12 @@ export default defineConfig({
       plugins: [
         ion({
           icons: {
-            iconDir: "./src/icons"
+            iconDir: "./src/icons",
           },
-        })
-      ]
-    })
-  ]
+        }),
+      ],
+    }),
+  ],
 });
 ```
 
@@ -71,6 +75,7 @@ Just like `astro-icon`, Ion supports using icons from `@iconify-json/*` packages
 ### Using Icons
 
 #### In the Sidebar
+
 You can have icons in the sidebar for top-level pages by specifying the icon name in your `astro.config.mjs`, surrounded by square brackets. The name should be the same as the name of the SVG file in the icons directory, or the name of the icon from `@iconify-json/*`, prefixed with the package name:
 
 ```js
@@ -82,21 +87,21 @@ export default defineConfig({
       // ...
       sidebar: [
         {
-          label: '[home] Home',
-          link: '/'
+          label: "[home] Home",
+          link: "/",
         },
         {
-          label: '[lucide:list] Getting Started', // A list icon from @iconify-json/lucide
-          link: '/getting-started'
+          label: "[lucide:list] Getting Started", // A list icon from @iconify-json/lucide
+          link: "/getting-started",
         },
         {
-          label: '[fe:loop] Changelog', // A loop icon from @iconify-json/fe (feather icons)
-          link: '/changelog'
+          label: "[fe:loop] Changelog", // A loop icon from @iconify-json/fe (feather icons)
+          link: "/changelog",
         },
         // ...
-      ]
-    })
-  ]
+      ],
+    }),
+  ],
 });
 ```
 
@@ -117,7 +122,7 @@ The `"` characters are required, otherwise Starlight will throw an error. Simila
 Ion also provides Header Badges, which function just like Starlight's badges but can be used in Markdown headings instead:
 
 ```mdx
-import HeaderBadge from 'starlight-ion-theme/components/HeaderBadge.astro';
+import HeaderBadge from "starlight-ion-theme/components/HeaderBadge.astro";
 
 # My Heading <HeaderBadge text="I'm a Badge!" />
 ```
@@ -125,24 +130,28 @@ import HeaderBadge from 'starlight-ion-theme/components/HeaderBadge.astro';
 ## Configuration
 
 ### `icons.*`
+
 - Type: `AstroIconOptions | undefined`
 - Default: `undefined`
 
 The `icons` object exposes `astro-icon`'s configuration options. Check the [astro-icon documentation](https://www.astroicon.dev) for more information.
 
 ### `useCustomECTheme`
+
 - Type: `boolean | undefined`
 - Default: `true`
 
 The `useCustomECTheme` option specifies whether to use the custom theme for Expressive Code blocks. If set to `false`, the default theme you specified in your `astro.config.mjs` will be used. Disabling this option will also unload the custom CSS for the Expressive Code blocks, meaning you won't have the rounded corners and other overrides that Ion provides.
 
 ### `footer`
+
 - Type: `FooterOptions | undefined`
 - Default: `undefined`
 
 The `footer` option specifies the configuration for the footer. The following options are available:
 
 #### `footer.links`
+
 - Type: `FooterLink[]`
 - Default: `[]`
 
@@ -153,12 +162,14 @@ An array of links to display in the footer. Each link should be an object with t
 - `newTab`: Whether to open the link in a new tab. Defaults to `false`.
 
 #### `footer.text`
+
 - Type: `string | undefined`
 - Default: `undefined`
 
 The text to display on the left hand side of footer. This can be used to display a copyright notice or other information.
 
 #### `footer.icons`
+
 - Type: `FooterIcon[]`
 - Default: `[]`
 
@@ -169,16 +180,15 @@ An array of icons to display in the footer. Each icon should be an object with t
 - `newTab`: Whether to open the link in a new tab. Defaults to `false`.
 
 ### `overrides.*`
+
 - Type: `boolean | undefined`
 - Default: `true`
 
 All options under the `overrides` object specify whether to use the custom override for a specific component. If set to `false`, the default component will be used. The following options are available:
 
-- `overrides.SiteTitle`
 - `overrides.Sidebar`
 - `overrides.Pagination`
 - `overrides.Hero`
-- `overrides.Head`
 - `overrides.PageTitle`
 
 :::note
@@ -187,7 +197,7 @@ When removing the override on the `Sidebar` component, [sidebar icons](#sidebar-
 
 ## Modifying the Theme
 
-Ion is fully customizable, meaning you can override pretty much any part of the theme you need. The colors used for the theme are defined using the normal Starlight CSS variables, so you can easily change them in your own stylesheets. 
+Ion is fully customizable, meaning you can override pretty much any part of the theme you need. The colors used for the theme are defined using the normal Starlight CSS variables, so you can easily change them in your own stylesheets.
 
 If you have defined custom component overrides for any of the components that Ion overrides, you can still use them. The custom components will be used instead of the Ion components.
 
