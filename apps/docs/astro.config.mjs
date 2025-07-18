@@ -58,7 +58,7 @@ export default defineConfig({
             links: [
               {
                 text: "Homepage",
-                href: "https://louisescher.dev",
+                href: "https://lou.gg",
               },
             ],
             icons: [
