@@ -3,9 +3,8 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": "\"pnpm --filter docs dev\"",
+	  "dev": "\"pnpm --filter docs dev\"",
     "changeset": "changeset",
-		"ci:prepublish": "pnpm build",
 		"ci:install": "pnpm install --frozen-lockfile",
 		"ci:version": "pnpm changeset version",
 		"ci:publish": "pnpm changeset publish"
