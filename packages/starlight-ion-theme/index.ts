@@ -129,7 +129,6 @@ function createPlugin(pluginConfig?: Config): StarlightPlugin {
 
         if (pluginConfig?.useCustomECTheme !== false && !!ecConfig) {
           if (typeof ecConfig === "boolean") ecConfig = {};
-
           ecConfig.themes = [ionDark, ionLight];
         }
 
