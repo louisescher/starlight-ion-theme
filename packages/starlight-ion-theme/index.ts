@@ -139,6 +139,7 @@ function createPlugin(pluginConfig?: Config): StarlightPlugin {
         updateConfig({
           customCss,
           components: {
+          	...userSpecifiedComponents,
             Sidebar:
               userSpecifiedComponents.Sidebar ||
               enabledOverrides.Sidebar !== false
