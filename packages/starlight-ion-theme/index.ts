@@ -129,7 +129,6 @@ function createPlugin(pluginConfig?: Config): StarlightPlugin {
 
         if (pluginConfig?.useCustomECTheme !== false && !!ecConfig) {
           if (typeof ecConfig === "boolean") ecConfig = {};
-
           ecConfig.themes = [ionDark, ionLight];
         }
 
@@ -139,6 +138,7 @@ function createPlugin(pluginConfig?: Config): StarlightPlugin {
         updateConfig({
           customCss,
           components: {
+          	...userSpecifiedComponents,
             Sidebar:
               userSpecifiedComponents.Sidebar ||
               enabledOverrides.Sidebar !== false
