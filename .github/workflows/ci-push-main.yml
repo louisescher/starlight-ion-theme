@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Install Tools & Dependencies
-        uses: louisescher/starlight-ion-theme/.github/actions/install@master
+        uses: louisescher/starlight-ion-theme/.github/actions/install@main
 
       - name: Run Prepublish
         run: pnpm ci:prepublish
