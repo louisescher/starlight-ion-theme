@@ -1,0 +1,43 @@
+name: CI - Push to Main
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions:
+  issues: write
+  repository-projects: read
+  contents: write
+  pull-requests: write
+  pages: write
+  id-token: write
+
+jobs:
+  changeset-release:
+    name: Changeset Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Install Tools & Dependencies
+        uses: louisescher/starlight-ion-theme/.github/actions/install@master
+
+      - name: Run Prepublish
+        run: pnpm ci:prepublish
+
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+            setupGitUser: true
+            commit: "👷 [ci]: Version Packages"
+            title: "👷 [ci]: Ready for Release"
+            version: pnpm ci:version
+            publish: pnpm ci:publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

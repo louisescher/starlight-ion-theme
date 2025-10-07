@@ -4,12 +4,22 @@
   "private": true,
   "scripts": {
     "dev": "\"pnpm --filter docs dev\"",
-    "publish": "\"pnpm --filter starlight-ion-theme publish\""
+    "changeset": "changeset",
+		"ci:prepublish": "pnpm build",
+		"ci:install": "pnpm install --frozen-lockfile",
+		"ci:version": "pnpm changeset version",
+		"ci:publish": "pnpm changeset publish"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "5.2.2",
     "prettier": "3.5.3",
     "prettier-plugin-astro": "0.14.1"
   },
-  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+  "dependencies": {
+  	"@changesets/changelog-github": "0.5.1",
+		"@changesets/cli": "2.29.7",
+		"@changesets/config": "3.1.1",
+		"@changesets/write": "0.4.0"
+  },
+  "packageManager": "pnpm@10.18.1"
 }
