@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@changesets/config/schema.json",
   "changelog": ["@changesets/changelog-github", { "repo": "louisescher/starlight-ion-theme" }],
-  "ignore": ["apps/docs"],
+  "ignore": ["docs"],
   "commit": false,
   "fixed": [],
   "linked": [],
