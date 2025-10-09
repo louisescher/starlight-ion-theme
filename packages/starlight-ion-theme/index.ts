@@ -138,26 +138,23 @@ function createPlugin(pluginConfig?: Config): StarlightPlugin {
         updateConfig({
           customCss,
           components: {
-          	...userSpecifiedComponents,
             Sidebar:
-              userSpecifiedComponents.Sidebar ||
-              enabledOverrides.Sidebar !== false
+              pluginConfig?.overrides?.Sidebar !== false
                 ? "starlight-ion-theme/components/Sidebar.astro"
                 : undefined,
             Pagination:
-              userSpecifiedComponents.Pagination ||
-              enabledOverrides.Pagination !== false
+              pluginConfig?.overrides?.Pagination !== false
                 ? "starlight-ion-theme/components/Pagination.astro"
                 : undefined,
             Hero:
-              userSpecifiedComponents.Hero || enabledOverrides.Hero !== false
+              pluginConfig?.overrides?.Hero !== false
                 ? "starlight-ion-theme/components/Hero.astro"
                 : undefined,
             PageTitle:
-              userSpecifiedComponents.PageTitle ||
-              enabledOverrides.PageTitle !== false
+              pluginConfig?.overrides?.PageTitle !== false
                 ? "starlight-ion-theme/components/PageTitle.astro"
                 : undefined,
+            ...userSpecifiedComponents,
           },
           expressiveCode: ecConfig,
         });
