@@ -1,5 +1,11 @@
 # starlight-ion-theme
 
+## 2.3.3
+
+### Patch Changes
+
+- [#21](https://github.com/louisescher/starlight-ion-theme/pull/21) [`1719c37`](https://github.com/louisescher/starlight-ion-theme/commit/1719c37eef9950291ba683319a01c4236ff844ad) Thanks [@louisescher](https://github.com/louisescher)! - Fixes overrides not applying properly
+
 ## 2.3.2
 
 ### Patch Changes
