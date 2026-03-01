@@ -4,6 +4,6 @@ packages:
 
 catalog:
   "@astrojs/starlight": https://pkg.pr.new/@astrojs/starlight@3644
-  astro: ^6.0.0-beta.14
+  astro: ^6.0.0-beta.17
   sharp: ^0.33.4
   typescript: ^5.7.2
