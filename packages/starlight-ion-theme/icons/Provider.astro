@@ -17,7 +17,7 @@ if (icon === "Provider") {
   );
 }
 
-let IconComponent;
+let IconComponent: AstroInstance | undefined;
 
 for (const key of Object.keys(icons)) {
   if (key.split("/").pop()?.split(".astro")[0] === icon) {
