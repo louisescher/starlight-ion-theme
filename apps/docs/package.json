@@ -23,5 +23,6 @@
     "starlight-ion-theme": "workspace:",
     "starlight-package-managers": "^0.9.0",
     "typescript": "catalog:"
-  }
+  },
+  "packageManager": "pnpm@10.32.1"
 }
