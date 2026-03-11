@@ -133,7 +133,6 @@ function createPlugin(pluginConfig?: Config): StarlightPlugin {
         }
 
         const userSpecifiedComponents = config.components || {};
-        const enabledOverrides = pluginConfig?.overrides || {};
 
         updateConfig({
           customCss,
