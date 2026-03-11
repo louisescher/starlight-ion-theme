@@ -1,5 +1,11 @@
 # starlight-ion-theme
 
+## 2.4.0
+
+### Minor Changes
+
+- [#25](https://github.com/louisescher/starlight-ion-theme/pull/25) [`d6c735c`](https://github.com/louisescher/starlight-ion-theme/commit/d6c735c8c6021d0b221b2d57d4ede2c987a09c9b) Thanks [@louisescher](https://github.com/louisescher)! - Adds support for Astro 6
+
 ## 2.3.3
 
 ### Patch Changes
