@@ -10,11 +10,11 @@ runs:
     - name: Setup Node.js based on .node-version
       uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
       with:
-        node-version-file: '.node-version'
-        cache: 'pnpm'
+        node-version-file: ".node-version"
+        cache: "pnpm"
 
     - name: Update npm
-      run: npm install -g npm@latest
+      run: npm install -g npm@10
       shell: bash
 
     - name: Install Dependencies
