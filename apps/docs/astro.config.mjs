@@ -35,9 +35,7 @@ export default defineConfig({
         },
         {
           label: "[book] Reference",
-          autogenerate: {
-            directory: "reference",
-          },
+          items: [{ autogenerate: { directory: "reference" } }],
         },
       ],
       customCss: [
