@@ -1,5 +1,11 @@
 # starlight-ion-theme
 
+## 2.4.1
+
+### Patch Changes
+
+- [#28](https://github.com/louisescher/starlight-ion-theme/pull/28) [`8efc766`](https://github.com/louisescher/starlight-ion-theme/commit/8efc76608ddee901c678cfecf3224faebcc85975) Thanks [@louisescher](https://github.com/louisescher)! - Adds support for Astro 7 & Starlight 0.42
+
 ## 2.4.0
 
 ### Minor Changes
