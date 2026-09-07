@@ -14,7 +14,7 @@ runs:
         cache: "pnpm"
 
     - name: Update npm
-      run: npm install -g npm@10
+      run: npm install -g npm@11
       shell: bash
 
     - name: Install Dependencies
